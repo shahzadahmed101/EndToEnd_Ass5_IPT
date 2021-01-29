@@ -1,0 +1,12 @@
+E:\Sem6\IPT\Lab\Ass Code\Ass_3\Sarmed\Hotel.Server\IPT.Hotel.Data\bin\Debug\IPT.Hotel.Data.dll.config
+E:\Sem6\IPT\Lab\Ass Code\Ass_3\Sarmed\Hotel.Server\IPT.Hotel.Data\bin\Debug\IPT.Hotel.Data.dll
+E:\Sem6\IPT\Lab\Ass Code\Ass_3\Sarmed\Hotel.Server\IPT.Hotel.Data\bin\Debug\IPT.Hotel.Data.pdb
+E:\Sem6\IPT\Lab\Ass Code\Ass_3\Sarmed\Hotel.Server\IPT.Hotel.Data\bin\Debug\EntityFramework.dll
+E:\Sem6\IPT\Lab\Ass Code\Ass_3\Sarmed\Hotel.Server\IPT.Hotel.Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\Sem6\IPT\Lab\Ass Code\Ass_3\Sarmed\Hotel.Server\IPT.Hotel.Data\bin\Debug\EntityFramework.xml
+E:\Sem6\IPT\Lab\Ass Code\Ass_3\Sarmed\Hotel.Server\IPT.Hotel.Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\Sem6\IPT\Lab\Ass Code\Ass_3\Sarmed\Hotel.Server\IPT.Hotel.Data\obj\Debug\IPT.Hotel.Data.csprojAssemblyReference.cache
+E:\Sem6\IPT\Lab\Ass Code\Ass_3\Sarmed\Hotel.Server\IPT.Hotel.Data\obj\Debug\IPT.Hotel.Data.csproj.CoreCompileInputs.cache
+E:\Sem6\IPT\Lab\Ass Code\Ass_3\Sarmed\Hotel.Server\IPT.Hotel.Data\obj\Debug\IPT.Hotel.Data.csproj.CopyComplete
+E:\Sem6\IPT\Lab\Ass Code\Ass_3\Sarmed\Hotel.Server\IPT.Hotel.Data\obj\Debug\IPT.Hotel.Data.dll
+E:\Sem6\IPT\Lab\Ass Code\Ass_3\Sarmed\Hotel.Server\IPT.Hotel.Data\obj\Debug\IPT.Hotel.Data.pdb

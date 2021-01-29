@@ -1,0 +1,125 @@
+﻿USE [HOTEL]
+GO
+/****** Object:  Table [dbo].[Booking]    Script Date: 12/22/2020 2:42:35 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Booking](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ArrivalDate] [varchar](max) NOT NULL,
+	[DepartureDate] [varchar](max) NOT NULL,
+	[CustomerId] [int] NOT NULL,
+	[RoomNoId] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+ CONSTRAINT [Unique_Booking] UNIQUE NONCLUSTERED 
+(
+	[CustomerId] ASC,
+	[RoomNoId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Customer]    Script Date: 12/22/2020 2:42:36 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Customer](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](25) NOT NULL,
+	[FatherName] [varchar](25) NOT NULL,
+	[Phone] [varchar](12) NOT NULL,
+	[Address] [varchar](max) NOT NULL,
+	[Gender] [bit] NULL,
+	[Email] [varchar](max) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[FoodOrder]    Script Date: 12/22/2020 2:42:36 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[FoodOrder](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[FoodName] [varchar](max) NOT NULL,
+	[Date] [varchar](max) NOT NULL,
+	[Price] [int] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[CustomerId] [int] NOT NULL,
+	[RoomNoId] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+ CONSTRAINT [Unique_FoodOrder] UNIQUE NONCLUSTERED 
+(
+	[CustomerId] ASC,
+	[RoomNoId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Room]    Script Date: 12/22/2020 2:42:36 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Room](
+	[RoomNo] [int] NOT NULL,
+	[Type] [varchar](25) NOT NULL,
+	[Price] [int] NOT NULL,
+	[Telephone] [varchar](12) NOT NULL,
+	[NoOfBeds] [int] NOT NULL,
+	[RoomFloor] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[RoomNo] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+ALTER TABLE [dbo].[Booking]  WITH CHECK ADD  CONSTRAINT [FK_Booking_Customerbook] FOREIGN KEY([CustomerId])
+REFERENCES [dbo].[Customer] ([Id])
+GO
+ALTER TABLE [dbo].[Booking] CHECK CONSTRAINT [FK_Booking_Customerbook]
+GO
+ALTER TABLE [dbo].[Booking]  WITH CHECK ADD  CONSTRAINT [FK_Booking_Rooms] FOREIGN KEY([RoomNoId])
+REFERENCES [dbo].[Room] ([RoomNo])
+GO
+ALTER TABLE [dbo].[Booking] CHECK CONSTRAINT [FK_Booking_Rooms]
+GO
+ALTER TABLE [dbo].[FoodOrder]  WITH CHECK ADD  CONSTRAINT [FK_Booking_Customer] FOREIGN KEY([CustomerId])
+REFERENCES [dbo].[Customer] ([Id])
+GO
+ALTER TABLE [dbo].[FoodOrder] CHECK CONSTRAINT [FK_Booking_Customer]
+GO
+ALTER TABLE [dbo].[FoodOrder]  WITH CHECK ADD  CONSTRAINT [FK_Booking_Room] FOREIGN KEY([RoomNoId])
+REFERENCES [dbo].[Room] ([RoomNo])
+GO
+ALTER TABLE [dbo].[FoodOrder] CHECK CONSTRAINT [FK_Booking_Room]
+GO
